@@ -11,7 +11,7 @@
 	<groupId>com.svar-proekt</groupId>
 	<artifactId>weldproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>weldproject</name>
+	<name>WeldProject</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
