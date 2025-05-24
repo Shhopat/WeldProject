@@ -6,8 +6,15 @@
 </head>
 <body>
 <h3>Welcome</h3>
+<p th:text="${'Права: ' + adminDTO.role}"></p>
+<p th:text="${'ID: ' + adminDTO.id + ' ' + adminDTO.username }"></p>
+<br/>
+<a th:href="@{/object/all}">Список объектов</a>
 
 
+<hr/>
+<form method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout!">
 
 </form>
 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>objects</title>
+</head>
+<body>
+<h3>Список объектов:</h3>
+<br/>
+<p th:if="${objectDTOList.isEmpty()}">Нет ни одного объекта.</p>
+<div th:unless="${objectDTOList.isEmpty()}">
+    <div th:each="x : ${objectDTOList}">
+        <p th:text="${x.id + '. ' + x.name +  ' ' + x.address + ' ' + x.postcode}"></p>
+    </div>
+</div>
+<hr/>
+<form method="GET" th:action="@{/object/add}">
+    <input type="submit" value="Добавить объект">
+</form>
+
+</body>
+</html>

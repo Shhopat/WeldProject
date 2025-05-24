@@ -12,12 +12,12 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(int id, String name, String password, Role role, List<ProductionObject> productionOjectsList) {
+    public Admin(int id, String username, String password, Role role, List<ProductionObject> productionOjectsList) {
         this.id = id;
-        this.name = name;
+        this.username = username;
         this.password = password;
         this.role = role;
-        this.productionOjectsList = productionOjectsList;
+        this.objectList = productionOjectsList;
     }
 
     @Id
@@ -25,7 +25,7 @@ public class Admin {
     private int id;
 
     @Column(name = "name", length = 40, nullable = false)
-    private String name;
+    private String username;
 
     @Column(name = "password", length = 100, unique = true, nullable = false)
     private String password;
@@ -35,7 +35,7 @@ public class Admin {
     private Role role;
 
     @OneToMany(mappedBy = "admin", fetch = FetchType.EAGER)
-    private List<ProductionObject> productionOjectsList;
+    private List<ProductionObject> objectList;
 
     public int getId() {
         return id;
@@ -45,12 +45,12 @@ public class Admin {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -61,12 +61,12 @@ public class Admin {
         this.password = password;
     }
 
-    public List<ProductionObject> getProductionOjectsList() {
-        return productionOjectsList;
+    public List<ProductionObject> getObjectList() {
+        return objectList;
     }
 
-    public void setProductionOjectsList(List<ProductionObject> productionOjectsList) {
-        this.productionOjectsList = productionOjectsList;
+    public void setObjectList(List<ProductionObject> objectList) {
+        this.objectList = objectList;
     }
 
     public Role getRole() {

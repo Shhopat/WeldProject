@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>formObject</title>
+</head>
+<body>
+<h3>Добавляем объект:</h3>
+<form method="POST" th:action="@{/object/save}" th:object="${objectDTO}">
+    <label for="name">Введите имя объекта: </label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <label for="address">Введите адрес:</label>
+    <input type="text" th:field="*{address}" id="address">
+    <br/>
+    <label for="postcode">Введите индекс:</label>
+    <input type="number" th:field="*{postcode}" id="postcode">
+    <br/>
+    <hr/>
+    <input type="submit" value="Создать!">
+</form>
+
+
+</body>
+</html>

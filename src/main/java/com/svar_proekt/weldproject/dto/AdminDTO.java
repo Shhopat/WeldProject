@@ -13,10 +13,10 @@ public class AdminDTO {
 
     public AdminDTO(int id, String name, String password, Role role, List<ProductionObject> productionOjectsList) {
         this.id = id;
-        this.name = name;
+        this.username = name;
         this.password = password;
         this.role = role;
-        this.productionOjectsList = productionOjectsList;
+        this.objectDTOList = productionOjectsList;
     }
 
     @Id
@@ -24,7 +24,7 @@ public class AdminDTO {
     private int id;
 
     @Column(name = "name", length = 40, nullable = false)
-    private String name;
+    private String username;
 
     @Column(name = "password", length = 100, unique = true, nullable = false)
     private String password;
@@ -33,8 +33,8 @@ public class AdminDTO {
     @Column(name = "role", nullable = false)
     private Role role;
 
-    @OneToMany(mappedBy = "admin", fetch = FetchType.EAGER)
-    private List<ProductionObject> productionOjectsList;
+    @OneToMany(mappedBy = "adminDTO", fetch = FetchType.EAGER)
+    private List<ProductionObject> objectDTOList;
 
     public int getId() {
         return id;
@@ -44,12 +44,12 @@ public class AdminDTO {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -68,11 +68,11 @@ public class AdminDTO {
         this.role = role;
     }
 
-    public List<ProductionObject> getProductionOjectsList() {
-        return productionOjectsList;
+    public List<ProductionObject> getObjectDTOList() {
+        return objectDTOList;
     }
 
-    public void setProductionOjectsList(List<ProductionObject> productionOjectsList) {
-        this.productionOjectsList = productionOjectsList;
+    public void setObjectDTOList(List<ProductionObject> objectDTOList) {
+        this.objectDTOList = objectDTOList;
     }
 }
