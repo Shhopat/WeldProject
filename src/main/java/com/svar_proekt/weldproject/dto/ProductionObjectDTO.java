@@ -3,6 +3,10 @@ package com.svar_proekt.weldproject.dto;
 import com.svar_proekt.weldproject.model.Admin;
 import com.svar_proekt.weldproject.model.Foreman;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
@@ -10,7 +14,7 @@ public class ProductionObjectDTO {
     public ProductionObjectDTO() {
     }
 
-    public ProductionObjectDTO(int id, String name, String address, int postcode, AdminDTO adminDTO, List<ForemanDTO> foremanDTOList) {
+    public ProductionObjectDTO(int id, String name, String address, String postcode, AdminDTO adminDTO, List<ForemanDTO> foremanDTOList) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -24,13 +28,19 @@ public class ProductionObjectDTO {
     private int id;
 
     @Column(name = "name", length = 100, nullable = false, unique = true)
+    @Size(message = "name should be between 5 - 40", min = 5, max = 20)
+    @NotEmpty(message = "name not be empty")
     private String name;
 
     @Column(name = "address", length = 200, nullable = false)
+    @Size(message = "address should be between 5 - 200", min = 5, max = 200)
+    @NotEmpty(message = "address not be empty")
     private String address;
 
     @Column(name = "postcode", nullable = false, unique = true)
-    private int postcode;
+    @Size(message = "postcode should be between 5 - 20", min = 5, max = 20)
+    @NotEmpty(message = "postcode not be empty")
+    private String postcode;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "admin_id", referencedColumnName = "id")
@@ -63,11 +73,11 @@ public class ProductionObjectDTO {
         this.address = address;
     }
 
-    public int getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(int postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 

@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class AdminDetailService implements UserDetailsService {
 
     private final AdminRepository adminRepository;
@@ -31,14 +32,22 @@ public class AdminDetailService implements UserDetailsService {
         return new AdminDetails(optionalAdmin.get());
     }
 
-    @Transactional
+
     public Admin findByUsername(String username) {
         return adminRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Not found " + username));
     }
 
-    @Transactional
+
     public List<ProductionObject> getObjectsByUsername(String username) {
         return findByUsername(username).getObjectList();
     }
+
+
+    public Admin findById(int id) {
+        return adminRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("not found admin with id:" + id));
+    }
+
+
+
 }

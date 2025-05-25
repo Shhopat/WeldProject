@@ -1,6 +1,10 @@
 package com.svar_proekt.weldproject.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
@@ -11,7 +15,7 @@ public class ProductionObject {
     public ProductionObject() {
     }
 
-    public ProductionObject(int id, String name, String address, int postcode, Admin admin, List<Foreman> foremanList) {
+    public ProductionObject(int id, String name, String address, String postcode, Admin admin, List<Foreman> foremanList) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -25,13 +29,19 @@ public class ProductionObject {
     private int id;
 
     @Column(name = "name", length = 100, nullable = false, unique = true)
+    @Size(message = "name should be between 5 - 40", min = 5, max = 20)
+    @NotEmpty(message = "name not be empty")
     private String name;
 
     @Column(name = "address", length = 200, nullable = false)
+    @Size(message = "address should be between 5 - 200", min = 5, max = 200)
+    @NotEmpty(message = "address not be empty")
     private String address;
 
     @Column(name = "postcode", nullable = false, unique = true)
-    private int postcode;
+    @Size(message = "postcode should be between 5 - 20", min = 5, max = 20)
+    @NotEmpty(message = "postcode not be empty")
+    private String postcode;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "admin_id", referencedColumnName = "id")
@@ -64,11 +74,11 @@ public class ProductionObject {
         this.address = address;
     }
 
-    public int getPostcode() {
+    public String getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(int postcode) {
+    public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 

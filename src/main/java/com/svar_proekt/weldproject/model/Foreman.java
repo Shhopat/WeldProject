@@ -24,6 +24,7 @@ public class Foreman {
     private int id;
 
     @Column(name = "name", length = 40, nullable = false)
+
     private String name;
 
     @Column(name = "info", length = 200, nullable = false)

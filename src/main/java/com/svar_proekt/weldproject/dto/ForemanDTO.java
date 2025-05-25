@@ -3,6 +3,8 @@ package com.svar_proekt.weldproject.dto;
 import com.svar_proekt.weldproject.model.ProductionObject;
 import com.svar_proekt.weldproject.model.Worker;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
@@ -23,6 +25,8 @@ public class ForemanDTO {
     private int id;
 
     @Column(name = "name", length = 40, nullable = false)
+    @Size(message = "name should be between 5 - 40", min = 5, max = 20)
+    @NotEmpty(message = "name not be empty")
     private String name;
 
     @Column(name = "info", length = 200, nullable = false)

@@ -2,15 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>registration</title>
+    <title>formEdit</title>
 </head>
 <body>
-<h3>Регистрация:</h3>
-<form method="POST" th:action="@{/auth/save}" th:object="${adminDTO}">
-    <label for="username">Введите имя пользователя:</label>
-    <input type="text" th:field="*{username}" id="username">
+<h3>Редактирования личных данных:</h3>
+<form method="POST" th:action="@{/auth/edit}" th:object="${adminDTO}">
+    <input type="hidden" th:field="*{id}">
+    <label for="username">Введите имя:</label>
     <div style="color:red" th:if="${#fields.hasErrors('username')}"
          th:errors="*{username}"></div>
+    <input type="text" th:field="*{username}" id="username">
     <br/>
     <label for="password">Введите пароль:</label>
     <input type="password" th:field="*{password}" id="password">
@@ -23,11 +24,9 @@
     </select>
     <br/>
     <hr/>
-    <input type="submit" value="Register!">
-
+    <input type="submit" value="Изменить!">
 
 </form>
-
 
 </body>
 </html>

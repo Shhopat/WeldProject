@@ -15,7 +15,9 @@
 <hr/>
 <form method="POST" th:action="@{/logout}">
     <input type="submit" value="Logout!">
-
+</form>
+<form method="GET" th:action="@{/auth/editForm/{id}(id=${adminDTO.id})}">
+    <input type="submit" value="Изменить личные данный">
 </form>
 
 

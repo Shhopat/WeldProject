@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>formObject</title>
+    <title>formEditObject</title>
 </head>
 <body>
-<h3>Добавляем объект:</h3>
-<form method="POST" th:action="@{/object/save}" th:object="${objectDTO}">
+<h3>Изменение объекта:</h3>
+<form method="POST" th:action="@{/object/edit/admin/{id}(id = ${objectDTO.adminDTO.id})}" th:object="${objectDTO}">
+    <input type="hidden" th:field="*{id}">
+    <input type="hidden" th:field="*{adminDTO.id}">
     <label for="name">Введите имя объекта: </label>
     <input type="text" th:field="*{name}" id="name">
     <div style="color:red" th:if="${#fields.hasErrors('name')}"
@@ -21,10 +23,9 @@
     <input type="text" th:field="*{postcode}" id="postcode">
     <div style="color:red" th:if="${#fields.hasErrors('postcode')}"
          th:errors="*{postcode}"></div>
-
     <br/>
     <hr/>
-    <input type="submit" value="Создать!">
+    <input type="submit" value="Изменить!">
 </form>
 
 
