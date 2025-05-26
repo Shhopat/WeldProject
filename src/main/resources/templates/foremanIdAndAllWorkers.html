@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AllWorkers</title>
+</head>
+<body>
+<h3 th:text="${foremanDTO.id + '. ' + foremanDTO.name + ' ' + foremanDTO.info}"></h3>
+<hr/>
+<h5>Список рабочих:</h5>
+<p th:if="${workerDTOList == null or workerDTOList.isEmpty()}">Нет ни одного рабочего!</p>
+<div th:unless="${workerDTOList.isEmpty()}" th:each="worker : ${workerDTOList}">
+    <br/>
+    <p th:text="${worker.id + '. ' + worker.name + ' ' + worker.position }"></p>
+</div>
+<br/>
+<hr/>
+<form method="GET" th:action="@{/foreman/{id}/edit(id = ${foremanDTO.id})}">
+    <input type="submit" value="Изменить бригадира">
+</form>
+<br/>
+<form method="get" th:action="@{/worker/foreman/{id}/add(id = ${foremanDTO.id})}">
+    <input type="submit" value="Добавить рабочего">
+</form>
+
+
+</body>
+</html>

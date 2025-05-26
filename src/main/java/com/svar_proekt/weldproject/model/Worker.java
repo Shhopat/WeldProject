@@ -1,5 +1,6 @@
 package com.svar_proekt.weldproject.model;
 
+import com.svar_proekt.weldproject.enums.Position;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,7 +10,7 @@ public class Worker {
     public Worker() {
     }
 
-    public Worker(int id, String name, String position, Foreman foreman) {
+    public Worker(int id, String name, Position position, Foreman foreman) {
         this.id = id;
         this.name = name;
         this.position = position;
@@ -24,7 +25,8 @@ public class Worker {
     private String name;
 
     @Column(name = "position", length = 40, nullable = false)
-    private String position;
+    @Enumerated(EnumType.STRING)
+    private Position position;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "foreman_id", referencedColumnName = "id")
@@ -46,11 +48,11 @@ public class Worker {
         this.name = name;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 

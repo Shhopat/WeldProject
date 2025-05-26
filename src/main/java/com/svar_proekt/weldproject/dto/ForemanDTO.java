@@ -20,24 +20,24 @@ public class ForemanDTO {
         this.workerDTOList = workerDTOList;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
 
-    @Column(name = "name", length = 40, nullable = false)
-    @Size(message = "name should be between 5 - 40", min = 5, max = 20)
+
     @NotEmpty(message = "name not be empty")
+    @Size(message = "name should be between 3 - 40",min = 3, max = 40)
     private String name;
 
-    @Column(name = "info", length = 200, nullable = false)
+
+    @NotEmpty(message = "info not be empty")
+    @Size(message = "info should be between 3 - 40",min = 3, max = 200)
     private String info;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "object_id", referencedColumnName = "id")
+
     private ProductionObjectDTO productionObjectDTO;
 
-    @OneToMany(mappedBy = "foremanDTO", fetch = FetchType.EAGER)
+
     private List<WorkerDTO> workerDTOList;
 
     public int getId() {
@@ -45,6 +45,7 @@ public class ForemanDTO {
     }
 
     public void setId(int id) {
+        System.out.println("foremanDTO setId вызвался. присваивается  " + id );
         this.id = id;
     }
 
@@ -78,5 +79,16 @@ public class ForemanDTO {
 
     public void setWorkerDTOList(List<WorkerDTO> workerDTOList) {
         this.workerDTOList = workerDTOList;
+    }
+
+    @Override
+    public String toString() {
+        return "ForemanDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                ", productionObjectDTO=" + productionObjectDTO +
+                ", workerDTOList=" + workerDTOList +
+                '}';
     }
 }

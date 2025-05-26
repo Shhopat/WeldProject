@@ -1,5 +1,6 @@
 package com.svar_proekt.weldproject.dto;
 
+import com.svar_proekt.weldproject.enums.Position;
 import com.svar_proekt.weldproject.model.Foreman;
 import jakarta.persistence.*;
 
@@ -7,25 +8,23 @@ public class WorkerDTO {
     public WorkerDTO() {
     }
 
-    public WorkerDTO(int id, String name, String position, ForemanDTO foremanDTO) {
+    public WorkerDTO(int id, String name, Position position, ForemanDTO foremanDTO) {
         this.id = id;
         this.name = name;
         this.position = position;
         this.foremanDTO = foremanDTO;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
 
-    @Column(name = "name", length = 40, nullable = false)
+
     private String name;
 
-    @Column(name = "position", length = 40, nullable = false)
-    private String position;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "foreman_id", referencedColumnName = "id")
+    private Position position;
+
+
     private ForemanDTO foremanDTO;
 
     public int getId() {
@@ -44,11 +43,11 @@ public class WorkerDTO {
         this.name = name;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
@@ -58,5 +57,15 @@ public class WorkerDTO {
 
     public void setForemanDTO(ForemanDTO foremanDTO) {
         this.foremanDTO = foremanDTO;
+    }
+
+    @Override
+    public String toString() {
+        return "WorkerDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", position=" + position +
+                ", foremanDTO=" + foremanDTO +
+                '}';
     }
 }

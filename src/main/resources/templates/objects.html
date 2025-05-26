@@ -10,13 +10,14 @@
 <p th:if="${objectDTOList.isEmpty()}">Нет ни одного объекта.</p>
 <div th:unless="${objectDTOList.isEmpty()}">
     <div th:each="x : ${objectDTOList}">
-        <p th:text="${x.id + '. ' + x.name +  ' ' + x.address + ' ' + x.postcode}"></p>
-        <hr/>
-        <form method="GET" th:action="@{/object/{id}/edit(id = ${x.getId()})}">
-            <input type="submit" value="Изменить">
+        <br/>
+        <a th:href="@{/foreman/object/{id}/all(id = ${x.id})}"
+           th:text="${x.id + '. ' + x.name +  ' ' + x.address + ' ' + x.postcode}"></a>
+
         </form>
     </div>
 </div>
+<hr/>
 <form method="GET" th:action="@{/object/add}">
     <input type="submit" value="Добавить объект">
 </form>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FormWorker</title>
+</head>
+<body>
+<h3>Добавить рабочего:</h3>
+<form method="post" th:action="@{/worker/save}" th:object="${workerDTO}">
+    <label for="name">Введите имя:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <label for="position">Выберите позицию:</label>
+    <select th:field="*{position}" id="position">
+        <option th:each="x : ${positions}" th:text="${x.getDisplayName()}" th:value="${x}"></option>
+    </select>
+    <br/>
+    <hr/>
+    <input type="submit" value="Создать!">
+</form>
+
+
+</body>
+</html>

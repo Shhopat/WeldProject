@@ -23,30 +23,27 @@ public class ProductionObjectDTO {
         this.foremanDTOList = foremanDTOList;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
 
-    @Column(name = "name", length = 100, nullable = false, unique = true)
+
     @Size(message = "name should be between 5 - 40", min = 5, max = 20)
     @NotEmpty(message = "name not be empty")
     private String name;
 
-    @Column(name = "address", length = 200, nullable = false)
+
     @Size(message = "address should be between 5 - 200", min = 5, max = 200)
     @NotEmpty(message = "address not be empty")
     private String address;
 
-    @Column(name = "postcode", nullable = false, unique = true)
+
     @Size(message = "postcode should be between 5 - 20", min = 5, max = 20)
     @NotEmpty(message = "postcode not be empty")
     private String postcode;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "admin_id", referencedColumnName = "id")
     private AdminDTO adminDTO;
 
-    @OneToMany(mappedBy = "productionObjectDTO", fetch = FetchType.EAGER)
+
     private List<ForemanDTO> foremanDTOList;
 
     public int getId() {

@@ -1,7 +1,6 @@
 package com.svar_proekt.weldproject.controller;
 
 import com.svar_proekt.weldproject.dto.ProductionObjectDTO;
-import com.svar_proekt.weldproject.mapper.AdminMapper;
 import com.svar_proekt.weldproject.mapper.ProductionObjectMapper;
 import com.svar_proekt.weldproject.services.AdminDetailService;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
@@ -20,13 +19,13 @@ public class ProductionOjectsController {
     private final ProductionObjectService productionObjectService;
     private final AdminDetailService adminDetailService;
     private final ProductionObjectMapper productionObjectMapper;
-    private final AdminMapper adminMapper;
 
-    public ProductionOjectsController(ProductionObjectService productionObjectService, AdminDetailService adminDetailService, ProductionObjectMapper productionObjectMapper, AdminMapper adminMapper) {
+
+
+    public ProductionOjectsController(ProductionObjectService productionObjectService, AdminDetailService adminDetailService, ProductionObjectMapper productionObjectMapper) {
         this.productionObjectService = productionObjectService;
         this.adminDetailService = adminDetailService;
         this.productionObjectMapper = productionObjectMapper;
-        this.adminMapper = adminMapper;
     }
 
 
@@ -65,18 +64,10 @@ public class ProductionOjectsController {
                 productionObjectMapper.toDTO(productionObjectService.findById(id)));
         return "editObjectFrom";
     }
-//    @PostMapping("/edit/admin/{id}")
-//    public String updateObject(@ModelAttribute("objectDTO") ProductionObjectDTO productionObjectDTO, @PathVariable("id") int adminId) {
-//        productionObjectService.update(productionObjectMapper.toEntity(productionObjectDTO),
-//                adminDetailService.findById(adminId));
-//        System.out.println(adminDetailService.findById(adminId).getUsername());
-//        return "redirect:/object/all";
-//    }
 
     @PostMapping("/edit/admin/{id}")
     public String updateObject(@ModelAttribute("objectDTO") @Valid ProductionObjectDTO productionObjectDTO
             , BindingResult bindingResult, @PathVariable("id") int adminId) {
-//        productionObjectDTO.setAdminDTO(adminMapper.toDTO(adminDetailService.findById(adminId)));
         System.out.println(productionObjectDTO.getAdminDTO().getUsername());
         if (bindingResult.hasErrors()) {
             for (FieldError fieldError : bindingResult.getFieldErrors()) {
@@ -87,8 +78,8 @@ public class ProductionOjectsController {
         productionObjectService.update(productionObjectMapper.toEntity(productionObjectDTO),
                 adminDetailService.findById(adminId));
         return "redirect:/object/all";
-
-
     }
+
+
 }
 
