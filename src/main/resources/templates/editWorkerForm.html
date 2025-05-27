@@ -2,14 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>FormWorker</title>
+    <title>editWorkForm</title>
 </head>
 <body>
-<h3>Добавить рабочего:</h3>
-<form method="post" th:action="@{/worker/save}" th:object="${workerDTO}">
+<h3>Редактирования данных рабочего:</h3>
+<form method="post" th:action="@{/worker/update}" th:object="${workerDTO}">
+    <input type="hidden" th:field="*{id}">
     <label for="name">Введите имя:</label>
-    <input type="text" th:field="*{name}" id="name">
     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:red"></div>
+    <input type="text" th:field="*{name}" id="name">
     <br/>
     <label for="position">Выберите позицию:</label>
     <select th:field="*{position}" id="position">
@@ -17,9 +18,8 @@
     </select>
     <br/>
     <hr/>
-    <input type="submit" value="Создать!">
+    <input type="submit" value="Изменить!">
 </form>
-
 
 </body>
 </html>

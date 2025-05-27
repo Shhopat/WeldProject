@@ -10,8 +10,7 @@
 <h5>Список рабочих:</h5>
 <p th:if="${workerDTOList == null or workerDTOList.isEmpty()}">Нет ни одного рабочего!</p>
 <div th:unless="${workerDTOList.isEmpty()}" th:each="worker : ${workerDTOList}">
-    <br/>
-    <p th:text="${worker.id + '. ' + worker.name + ' ' + worker.position }"></p>
+    <a th:href="@{/worker/{id}(id = ${worker.id})}" th:text="${worker.id + '. ' + worker.name + ' ' + worker.getPositionString() }"></a>
 </div>
 <br/>
 <hr/>

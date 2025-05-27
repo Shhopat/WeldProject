@@ -30,4 +30,12 @@ public class WorkerService {
     public Worker findById(int id) {
         return workerRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("worker not found with id:" + id));
     }
+
+    @Transactional
+    public void update(Worker worker) {
+        Worker worker1 = findById(worker.getId());
+        worker1.setName(worker.getName());
+        worker1.setPosition(worker.getPosition());
+        workerRepository.save(worker1);
+    }
 }

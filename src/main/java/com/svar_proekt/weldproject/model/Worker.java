@@ -2,6 +2,8 @@ package com.svar_proekt.weldproject.model;
 
 import com.svar_proekt.weldproject.enums.Position;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "worker")
@@ -22,6 +24,8 @@ public class Worker {
     private int id;
 
     @Column(name = "name", length = 40, nullable = false)
+    @NotEmpty(message = "name not be empty")
+    @Size(min = 4, max = 40, message = "name should be between 4-40")
     private String name;
 
     @Column(name = "position", length = 40, nullable = false)

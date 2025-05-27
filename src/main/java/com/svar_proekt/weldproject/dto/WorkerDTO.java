@@ -3,6 +3,8 @@ package com.svar_proekt.weldproject.dto;
 import com.svar_proekt.weldproject.enums.Position;
 import com.svar_proekt.weldproject.model.Foreman;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 public class WorkerDTO {
     public WorkerDTO() {
@@ -15,10 +17,15 @@ public class WorkerDTO {
         this.foremanDTO = foremanDTO;
     }
 
+    public String getPositionString() {
+        return this.position.getDisplayName();
+    }
+
 
     private int id;
 
-
+    @NotEmpty(message = "name not be empty")
+    @Size(min = 4, max = 40, message = "name should be between 4-40")
     private String name;
 
 
