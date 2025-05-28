@@ -15,12 +15,10 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(int id, String username, String password, Role role, List<ProductionObject> productionOjectsList) {
+    public Admin(int id, String username ) {
         this.id = id;
         this.username = username;
-        this.password = password;
-        this.role = role;
-        this.objectList = productionOjectsList;
+
     }
 
     @Id

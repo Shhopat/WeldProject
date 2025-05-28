@@ -1,0 +1,138 @@
+2025-05-29T02:04:56.773+03:00  INFO 8832 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 8832 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T02:04:56.773+03:00  INFO 8832 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T02:04:57.718+03:00  INFO 8832 --- [WeldProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29T02:04:57.891+03:00  INFO 8832 --- [WeldProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 5 JPA repository interfaces.
+2025-05-29T02:04:58.540+03:00  INFO 8832 --- [WeldProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-29T02:04:58.556+03:00  INFO 8832 --- [WeldProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-29T02:04:58.556+03:00  INFO 8832 --- [WeldProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-29T02:04:58.603+03:00  INFO 8832 --- [WeldProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-29T02:04:58.603+03:00  INFO 8832 --- [WeldProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1766 ms
+2025-05-29T02:04:58.781+03:00  INFO 8832 --- [WeldProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-29T02:04:58.965+03:00  INFO 8832 --- [WeldProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27da994b
+2025-05-29T02:04:58.965+03:00  INFO 8832 --- [WeldProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-29T02:04:59.012+03:00  INFO 8832 --- [WeldProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29T02:04:59.081+03:00  INFO 8832 --- [WeldProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-29T02:04:59.122+03:00  INFO 8832 --- [WeldProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-29T02:04:59.425+03:00  INFO 8832 --- [WeldProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29T02:04:59.498+03:00  WARN 8832 --- [WeldProject] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-29T02:04:59.498+03:00  WARN 8832 --- [WeldProject] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-29T02:04:59.509+03:00  INFO 8832 --- [WeldProject] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-29T02:05:00.341+03:00  INFO 8832 --- [WeldProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-29T02:05:00.341+03:00  INFO 8832 --- [WeldProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29T02:05:01.022+03:00  WARN 8832 --- [WeldProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29T02:05:01.041+03:00  INFO 8832 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T02:05:01.414+03:00 DEBUG 8832 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T02:05:01.739+03:00  INFO 8832 --- [WeldProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-29T02:05:01.744+03:00  INFO 8832 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 5.534 seconds (process running for 6.378)
+2025-05-29T02:05:01.753+03:00  INFO 8832 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T02:05:01.851+03:00  INFO 8832 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T02:05:02.221+03:00  INFO 8832 --- [WeldProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29T02:05:02.221+03:00  INFO 8832 --- [WeldProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-29T02:05:02.221+03:00  INFO 8832 --- [WeldProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-29T02:05:02.237+03:00 DEBUG 8832 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=1
+2025-05-29T02:05:02.237+03:00 DEBUG 8832 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=1
+2025-05-29T02:05:02.253+03:00  INFO 8832 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T02:05:02.269+03:00  INFO 8832 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T02:05:02.324+03:00 DEBUG 8832 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T02:11:52.314+03:00  INFO 8832 --- [WeldProject] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-29T02:11:52.314+03:00  INFO 8832 --- [WeldProject] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-29T02:11:54.344+03:00  INFO 8832 --- [WeldProject] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29T02:11:54.344+03:00  INFO 8832 --- [WeldProject] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-29T02:11:54.360+03:00  INFO 8832 --- [WeldProject] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-29T02:12:15.301+03:00  INFO 680 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 680 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T02:12:15.301+03:00  INFO 680 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T02:12:16.027+03:00  INFO 680 --- [WeldProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29T02:12:16.155+03:00  INFO 680 --- [WeldProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 5 JPA repository interfaces.
+2025-05-29T02:12:16.711+03:00  INFO 680 --- [WeldProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-29T02:12:16.725+03:00  INFO 680 --- [WeldProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-29T02:12:16.725+03:00  INFO 680 --- [WeldProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-29T02:12:16.788+03:00  INFO 680 --- [WeldProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-29T02:12:16.788+03:00  INFO 680 --- [WeldProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1423 ms
+2025-05-29T02:12:16.930+03:00  INFO 680 --- [WeldProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-29T02:12:17.073+03:00  INFO 680 --- [WeldProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1304e0d7
+2025-05-29T02:12:17.073+03:00  INFO 680 --- [WeldProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-29T02:12:17.121+03:00  INFO 680 --- [WeldProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29T02:12:17.152+03:00  INFO 680 --- [WeldProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-29T02:12:17.189+03:00  INFO 680 --- [WeldProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-29T02:12:17.435+03:00  INFO 680 --- [WeldProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29T02:12:17.501+03:00  WARN 680 --- [WeldProject] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-29T02:12:17.503+03:00  WARN 680 --- [WeldProject] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-29T02:12:17.517+03:00  INFO 680 --- [WeldProject] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-29T02:12:18.246+03:00  INFO 680 --- [WeldProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-29T02:12:18.246+03:00  INFO 680 --- [WeldProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29T02:12:18.803+03:00  WARN 680 --- [WeldProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29T02:12:18.818+03:00  INFO 680 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T02:12:19.077+03:00 DEBUG 680 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T02:12:19.309+03:00  INFO 680 --- [WeldProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-29T02:12:19.325+03:00  INFO 680 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 4.512 seconds (process running for 4.847)
+2025-05-29T02:12:19.325+03:00  INFO 680 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T02:12:19.421+03:00  INFO 680 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T02:12:19.722+03:00  INFO 680 --- [WeldProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29T02:12:19.722+03:00  INFO 680 --- [WeldProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-29T02:12:19.722+03:00  INFO 680 --- [WeldProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-29T02:12:19.738+03:00 DEBUG 680 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=1
+2025-05-29T02:12:19.738+03:00 DEBUG 680 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=1
+2025-05-29T02:12:19.755+03:00  INFO 680 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T02:12:19.755+03:00  INFO 680 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T02:12:19.817+03:00 DEBUG 680 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T02:22:05.440+03:00  INFO 680 --- [WeldProject] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-29T02:22:05.446+03:00  INFO 680 --- [WeldProject] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-29T02:22:07.470+03:00  INFO 680 --- [WeldProject] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29T02:22:07.470+03:00  INFO 680 --- [WeldProject] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-29T02:22:07.478+03:00  INFO 680 --- [WeldProject] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-29T02:22:09.214+03:00  INFO 7828 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 7828 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T02:22:09.227+03:00 DEBUG 7828 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-29T02:22:09.227+03:00  INFO 7828 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T02:22:12.718+03:00  INFO 7828 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T02:22:12.988+03:00 DEBUG 7828 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T02:22:13.258+03:00  INFO 7828 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 4.57 seconds (process running for 4.92)
+2025-05-29T02:22:13.258+03:00  INFO 7828 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T02:22:13.370+03:00 DEBUG 7828 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : перед методом itamClient.getAllItam 
+2025-05-29T02:22:13.370+03:00  INFO 7828 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T02:22:13.702+03:00 DEBUG 7828 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=1
+2025-05-29T02:22:13.710+03:00 DEBUG 7828 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=1
+2025-05-29T02:22:13.726+03:00  INFO 7828 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T02:22:13.726+03:00  INFO 7828 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T02:22:13.789+03:00 DEBUG 7828 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T02:22:40.185+03:00  INFO 9820 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 9820 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T02:22:40.200+03:00 DEBUG 9820 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-29T02:22:40.200+03:00  INFO 9820 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T02:22:43.638+03:00  INFO 9820 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T02:22:43.886+03:00 DEBUG 9820 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T02:22:44.141+03:00  INFO 9820 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 4.447 seconds (process running for 4.797)
+2025-05-29T02:22:44.156+03:00  INFO 9820 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T02:22:44.253+03:00 DEBUG 9820 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : перед методом itamClient.getAllItam 
+2025-05-29T02:22:44.253+03:00  INFO 9820 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T02:22:44.552+03:00 DEBUG 9820 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=1
+2025-05-29T02:22:44.568+03:00 DEBUG 9820 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=1
+2025-05-29T02:22:44.583+03:00  INFO 9820 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T02:22:44.583+03:00  INFO 9820 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T02:22:44.636+03:00 DEBUG 9820 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T02:27:47.789+03:00  INFO 8324 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 8324 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T02:27:47.798+03:00 DEBUG 8324 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-29T02:27:47.798+03:00  INFO 8324 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T02:27:52.649+03:00  INFO 8324 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T02:27:53.007+03:00 DEBUG 8324 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T02:27:53.371+03:00  INFO 8324 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 6.325 seconds (process running for 6.816)
+2025-05-29T02:27:53.371+03:00  INFO 8324 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T02:27:53.514+03:00 DEBUG 8324 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : перед методом itamClient.getAllItam 
+2025-05-29T02:27:53.514+03:00  INFO 8324 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T02:27:53.929+03:00 DEBUG 8324 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=1
+2025-05-29T02:27:53.942+03:00 DEBUG 8324 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=1
+2025-05-29T02:27:53.974+03:00  INFO 8324 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T02:27:53.974+03:00  INFO 8324 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T02:27:54.058+03:00 DEBUG 8324 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext

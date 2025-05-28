@@ -15,13 +15,10 @@ public class ProductionObject {
     public ProductionObject() {
     }
 
-    public ProductionObject(int id, String name, String address, String postcode, Admin admin, List<Foreman> foremanList) {
+    public ProductionObject(int id, String name) {
         this.id = id;
         this.name = name;
-        this.address = address;
-        this.postcode = postcode;
-        this.admin = admin;
-        this.foremanList = foremanList;
+
     }
 
     @Id
@@ -49,6 +46,9 @@ public class ProductionObject {
 
     @OneToMany(mappedBy = "productionObject", fetch = FetchType.EAGER)
     private List<Foreman> foremanList;
+
+    @OneToMany(mappedBy = "productionObject",fetch = FetchType.EAGER)
+    private List<Itam> itamList;
 
     public int getId() {
         return id;
@@ -96,5 +96,13 @@ public class ProductionObject {
 
     public void setForemanList(List<Foreman> foremanList) {
         this.foremanList = foremanList;
+    }
+
+    public List<Itam> getItamList() {
+        return itamList;
+    }
+
+    public void setItamList(List<Itam> itamList) {
+        this.itamList = itamList;
     }
 }

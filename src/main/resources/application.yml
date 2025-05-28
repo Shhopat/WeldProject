@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: OFF
+    org.springframework: OFF
+    org.hibernate: OFF
+    com.zaxxer.hikari: OFF
+    reactor: OFF
+    com.svar_proekt.weldproject: TRACE
+
+  file:
+    name: logs/app.log

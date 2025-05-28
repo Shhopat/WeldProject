@@ -2,6 +2,7 @@ package com.svar_proekt.weldproject.dto;
 
 import com.svar_proekt.weldproject.model.Admin;
 import com.svar_proekt.weldproject.model.Foreman;
+import com.svar_proekt.weldproject.model.Itam;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -14,15 +15,9 @@ public class ProductionObjectDTO {
     public ProductionObjectDTO() {
     }
 
-    public ProductionObjectDTO(int id, String name, String address, String postcode, AdminDTO adminDTO, List<ForemanDTO> foremanDTOList) {
-        this.id = id;
+    public ProductionObjectDTO(String name) {
         this.name = name;
-        this.address = address;
-        this.postcode = postcode;
-        this.adminDTO = adminDTO;
-        this.foremanDTOList = foremanDTOList;
     }
-
 
     private int id;
 
@@ -45,6 +40,8 @@ public class ProductionObjectDTO {
 
 
     private List<ForemanDTO> foremanDTOList;
+
+    private List<ItamDTO> itamDTOList;
 
     public int getId() {
         return id;
@@ -92,5 +89,13 @@ public class ProductionObjectDTO {
 
     public void setForemanDTOList(List<ForemanDTO> foremanDTOList) {
         this.foremanDTOList = foremanDTOList;
+    }
+
+    public List<ItamDTO> getItamDTOList() {
+        return itamDTOList;
+    }
+
+    public void setItamDTOList(List<ItamDTO> itamDTOList) {
+        this.itamDTOList = itamDTOList;
     }
 }

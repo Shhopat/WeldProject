@@ -12,11 +12,10 @@ public class Worker {
     public Worker() {
     }
 
-    public Worker(int id, String name, Position position, Foreman foreman) {
+    public Worker(int id, String name) {
         this.id = id;
         this.name = name;
-        this.position = position;
-        this.foreman = foreman;
+
     }
 
     @Id

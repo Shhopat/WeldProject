@@ -14,12 +14,9 @@ public class Foreman {
     public Foreman() {
     }
 
-    public Foreman(int id, String name, String info, ProductionObject productionObject, List<Worker> workerList) {
+    public Foreman(int id, String name) {
         this.id = id;
         this.name = name;
-        this.info = info;
-        this.productionObject = productionObject;
-        this.workerList = workerList;
     }
 
     @Id

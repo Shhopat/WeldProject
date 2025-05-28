@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AllItam</title>
+</head>
+<body>
+<h3 th:text="${objectDTO.id + '. ' + objectDTO.name + ' ' + objectDTO.address + ' ' + objectDTO.postcode }"></h3>
+<hr/>
+<h5>Список заказов:</h5>
+<p th:if="${itamDTOList == null or itamDTOList.isEmpty() }">Нет ни одного заказа!</p>
+<div th:unless="${itamDTOList.isEmpty()}" th:each="x : ${itamDTOList}">
+    <p th:text="${x.id + '. ' + x.name}"></p>
+</div>
+</body>
+</html>
