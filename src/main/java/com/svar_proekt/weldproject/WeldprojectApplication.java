@@ -36,7 +36,9 @@ public class WeldprojectApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         logger.info("начало работы");
-        ProductionObjectDTO productionObjectDTO = productionObjectMapper.toDTO(productionObjectService.findById(1));
+        logger.info("создан объект production");
+        ProductionObjectDTO productionObjectDTO = new ProductionObjectDTO("Вати");
+        productionObjectDTO.setId(10);
 
 
         try {
@@ -45,9 +47,10 @@ public class WeldprojectApplication implements CommandLineRunner {
                 System.out.println(itamDTO.getId() + ". " + itamDTO.getName());
             }
         } catch (RuntimeException e) {
+            logger.debug("поймал исключение");
             System.out.println(e.getMessage());
         }
-
+        logger.info("конец работы");
 
     }
 }

@@ -136,3 +136,60 @@
 2025-05-29T02:27:53.974+03:00  INFO 8324 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
 2025-05-29T02:27:53.974+03:00  INFO 8324 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
 2025-05-29T02:27:54.058+03:00 DEBUG 8324 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T13:12:53.682+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 19576 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T13:12:53.682+03:00 DEBUG 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-29T13:12:53.682+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T13:12:58.607+03:00 DEBUG 19576 --- [WeldProject] [main] c.s.weldproject.config.WebClientConfig   : зашел в бин WebClient
+2025-05-29T13:12:59.527+03:00  INFO 19576 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T13:12:59.861+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.config.SecurityConfig    : зашел в бин security
+2025-05-29T13:12:59.924+03:00 DEBUG 19576 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T13:13:00.304+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 7.46 seconds (process running for 8.212)
+2025-05-29T13:13:00.320+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T13:13:00.320+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : создан объект production
+2025-05-29T13:13:00.320+03:00 DEBUG 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : перед методом itamClient.getAllItam 
+2025-05-29T13:13:00.320+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T13:13:00.820+03:00 DEBUG 19576 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=10
+2025-05-29T13:13:00.820+03:00 DEBUG 19576 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=10
+2025-05-29T13:13:00.856+03:00  INFO 19576 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T13:13:00.858+03:00  INFO 19576 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T13:13:00.995+03:00 DEBUG 19576 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T13:13:01.107+03:00  INFO 19576 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : конец работы
+2025-05-29T13:15:45.507+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 9816 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T13:15:45.507+03:00 DEBUG 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-29T13:15:45.507+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T13:15:49.789+03:00 DEBUG 9816 --- [WeldProject] [main] c.s.weldproject.config.WebClientConfig   : зашел в бин WebClient
+2025-05-29T13:15:50.521+03:00  INFO 9816 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T13:15:50.823+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.config.SecurityConfig    : зашел в бин security
+2025-05-29T13:15:50.886+03:00 DEBUG 9816 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T13:15:51.258+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 6.491 seconds (process running for 6.993)
+2025-05-29T13:15:51.262+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T13:15:51.262+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : создан объект production
+2025-05-29T13:15:51.262+03:00 DEBUG 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : перед методом itamClient.getAllItam 
+2025-05-29T13:15:51.262+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T13:15:51.695+03:00 DEBUG 9816 --- [WeldProject] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=10
+2025-05-29T13:15:51.715+03:00 DEBUG 9816 --- [WeldProject] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=10
+2025-05-29T13:15:51.741+03:00  INFO 9816 --- [WeldProject] [http-nio-8080-exec-3] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T13:15:51.751+03:00  INFO 9816 --- [WeldProject] [http-nio-8080-exec-3] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T13:15:51.815+03:00 DEBUG 9816 --- [WeldProject] [http-nio-8080-exec-3] c.s.w.util.GlobalExceptionHandler        : перехватил исключение 
+2025-05-29T13:15:51.898+03:00 DEBUG 9816 --- [WeldProject] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T13:15:52.039+03:00  INFO 9816 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : конец работы
+2025-05-29T13:17:31.254+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Starting WeldprojectApplication using Java 23.0.1 with PID 16740 (C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject\target\classes started by gumak in C:\Users\gumak\OneDrive\Рабочий стол\Java Project\WeldProject)
+2025-05-29T13:17:31.254+03:00 DEBUG 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-05-29T13:17:31.254+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-29T13:17:35.247+03:00 DEBUG 16740 --- [WeldProject] [main] c.s.weldproject.config.WebClientConfig   : зашел в бин WebClient
+2025-05-29T13:17:36.004+03:00  INFO 16740 --- [WeldProject] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminDetailService
+2025-05-29T13:17:36.294+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.config.SecurityConfig    : зашел в бин security
+2025-05-29T13:17:36.369+03:00 DEBUG 16740 --- [WeldProject] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-29T13:17:36.705+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : Started WeldprojectApplication in 6.189 seconds (process running for 6.697)
+2025-05-29T13:17:36.715+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : начало работы
+2025-05-29T13:17:36.715+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : создан объект production
+2025-05-29T13:17:36.715+03:00 DEBUG 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : перед методом itamClient.getAllItam 
+2025-05-29T13:17:36.715+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.client.ItamClient        : перешел в метод getAllItam в WebClient 
+2025-05-29T13:17:37.171+03:00 DEBUG 16740 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /itam/getAll?objectId=10
+2025-05-29T13:17:37.180+03:00 DEBUG 16740 --- [WeldProject] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /itam/getAll?objectId=10
+2025-05-29T13:17:37.212+03:00  INFO 16740 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.controller.ItamController          :  перешел в ItamController
+2025-05-29T13:17:37.220+03:00  INFO 16740 --- [WeldProject] [http-nio-8080-exec-1] c.s.weldproject.services.ItamService     : ItamService method findAll
+2025-05-29T13:17:37.291+03:00 DEBUG 16740 --- [WeldProject] [http-nio-8080-exec-1] c.s.w.util.GlobalExceptionHandler        : перехватил исключение 
+2025-05-29T13:17:37.339+03:00 DEBUG 16740 --- [WeldProject] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29T13:17:37.451+03:00 DEBUG 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : поймал исключение
+2025-05-29T13:17:37.451+03:00  INFO 16740 --- [WeldProject] [main] c.s.weldproject.WeldprojectApplication   : конец работы
