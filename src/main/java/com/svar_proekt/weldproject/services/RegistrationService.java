@@ -2,21 +2,18 @@ package com.svar_proekt.weldproject.services;
 
 import com.svar_proekt.weldproject.model.Admin;
 import com.svar_proekt.weldproject.repositories.AdminRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@RequiredArgsConstructor
 public class RegistrationService {
     private final AdminRepository adminRepository;
     private final PasswordEncoder passwordEncoder;
     private final AdminDetailService adminDetailService;
 
-    public RegistrationService(AdminRepository adminRepository, PasswordEncoder passwordEncoder, AdminDetailService adminDetailService) {
-        this.adminRepository = adminRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.adminDetailService = adminDetailService;
-    }
 
     @Transactional
     public void register(Admin admin) {

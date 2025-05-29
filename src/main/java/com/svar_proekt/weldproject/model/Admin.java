@@ -5,20 +5,22 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "admin")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Admin {
-
-    public Admin() {
-    }
-
-    public Admin(int id, String username ) {
+    public Admin(int id, String username) {
         this.id = id;
         this.username = username;
-
     }
 
     @Id
@@ -42,54 +44,5 @@ public class Admin {
     @OneToMany(mappedBy = "admin", fetch = FetchType.EAGER)
     private List<ProductionObject> objectList;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public List<ProductionObject> getObjectList() {
-        return objectList;
-    }
-
-    public void setObjectList(List<ProductionObject> objectList) {
-        this.objectList = objectList;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                ", objectList=" + objectList +
-                '}';
-    }
 }

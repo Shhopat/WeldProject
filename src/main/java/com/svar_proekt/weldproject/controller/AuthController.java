@@ -8,6 +8,7 @@ import com.svar_proekt.weldproject.services.RegistrationService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,16 +20,12 @@ import java.security.Principal;
 
 @Controller
 @RequestMapping("/auth")
+@RequiredArgsConstructor
 public class AuthController {
     private final AdminMapper adminMapper;
     private final RegistrationService registrationService;
     private final AdminDetailService adminDetailService;
 
-    public AuthController(AdminMapper adminMapper, RegistrationService registrationService, AdminDetailService adminDetailService) {
-        this.adminMapper = adminMapper;
-        this.registrationService = registrationService;
-        this.adminDetailService = adminDetailService;
-    }
 
     @GetMapping("/login")
     public String getFormLogin() {

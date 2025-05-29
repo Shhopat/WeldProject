@@ -5,20 +5,21 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "object")
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductionObject {
-
-    public ProductionObject() {
-    }
-
     public ProductionObject(int id, String name) {
         this.id = id;
         this.name = name;
-
     }
 
     @Id
@@ -50,59 +51,5 @@ public class ProductionObject {
     @OneToMany(mappedBy = "productionObject",fetch = FetchType.EAGER)
     private List<Itam> itamList;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public List<Foreman> getForemanList() {
-        return foremanList;
-    }
-
-    public void setForemanList(List<Foreman> foremanList) {
-        this.foremanList = foremanList;
-    }
-
-    public List<Itam> getItamList() {
-        return itamList;
-    }
-
-    public void setItamList(List<Itam> itamList) {
-        this.itamList = itamList;
-    }
 }

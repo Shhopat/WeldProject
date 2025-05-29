@@ -7,6 +7,7 @@ import com.svar_proekt.weldproject.mapper.WorkerMapper;
 import com.svar_proekt.weldproject.services.ForemanService;
 import com.svar_proekt.weldproject.services.WorkerService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/worker")
+@RequiredArgsConstructor
 public class WorkerController {
     private int idForeman;
     private final WorkerService workerService;
@@ -25,12 +27,6 @@ public class WorkerController {
     private final ForemanService foremanService;
     private final ForemanMapper foremanMapper;
 
-    public WorkerController(WorkerService workerService, WorkerMapper workerMapper, ForemanService foremanService, ForemanMapper foremanMapper) {
-        this.workerService = workerService;
-        this.workerMapper = workerMapper;
-        this.foremanService = foremanService;
-        this.foremanMapper = foremanMapper;
-    }
 
     @GetMapping("/foreman/{id}/add")
     public String getFormWorker(@ModelAttribute("workerDTO") WorkerDTO workerDTO, Model model,

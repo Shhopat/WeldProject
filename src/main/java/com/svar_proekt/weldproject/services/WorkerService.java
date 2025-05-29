@@ -3,20 +3,17 @@ package com.svar_proekt.weldproject.services;
 import com.svar_proekt.weldproject.model.Foreman;
 import com.svar_proekt.weldproject.model.Worker;
 import com.svar_proekt.weldproject.repositories.WorkerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class WorkerService {
     public final WorkerRepository workerRepository;
     public final ForemanService foremanService;
-
-    public WorkerService(WorkerRepository workerRepository, ForemanService foremanService) {
-        this.workerRepository = workerRepository;
-        this.foremanService = foremanService;
-    }
 
     @Transactional
     public void save(Worker worker, int idForeman) {

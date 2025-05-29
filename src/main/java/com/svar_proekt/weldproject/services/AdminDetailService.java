@@ -4,6 +4,9 @@ import com.svar_proekt.weldproject.details.AdminDetails;
 import com.svar_proekt.weldproject.model.Admin;
 import com.svar_proekt.weldproject.model.ProductionObject;
 import com.svar_proekt.weldproject.repositories.AdminRepository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,13 +18,12 @@ import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
+@Data
 public class AdminDetailService implements UserDetailsService {
 
     private final AdminRepository adminRepository;
 
-    public AdminDetailService(AdminRepository adminRepository) {
-        this.adminRepository = adminRepository;
-    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

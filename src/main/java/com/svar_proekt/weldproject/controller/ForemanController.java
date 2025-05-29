@@ -8,6 +8,7 @@ import com.svar_proekt.weldproject.mapper.WorkerMapper;
 import com.svar_proekt.weldproject.services.ForemanService;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/foreman")
+@RequiredArgsConstructor
 public class ForemanController {
     private final ForemanMapper foremanMapper;
     private final ForemanService foremanService;
@@ -23,14 +25,6 @@ public class ForemanController {
     private final ProductionObjectService productionObjectService;
     private final WorkerMapper workerMapper;
 
-    @Autowired
-    public ForemanController(ForemanMapper foremanMapper, ForemanService foremanService, ProductionObjectMapper productionObjectMapper, ProductionObjectService productionObjectService, WorkerMapper workerMapper) {
-        this.foremanMapper = foremanMapper;
-        this.foremanService = foremanService;
-        this.productionObjectMapper = productionObjectMapper;
-        this.productionObjectService = productionObjectService;
-        this.workerMapper = workerMapper;
-    }
 
     @GetMapping("/object/{id}/all")
     public String getAllForeman(@PathVariable("id") int id, Model model) {

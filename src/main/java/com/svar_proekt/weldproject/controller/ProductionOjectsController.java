@@ -5,6 +5,7 @@ import com.svar_proekt.weldproject.mapper.ProductionObjectMapper;
 import com.svar_proekt.weldproject.services.AdminDetailService;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,18 +16,11 @@ import java.security.Principal;
 
 @Controller
 @RequestMapping("/object")
+@RequiredArgsConstructor
 public class ProductionOjectsController {
     private final ProductionObjectService productionObjectService;
     private final AdminDetailService adminDetailService;
     private final ProductionObjectMapper productionObjectMapper;
-
-
-
-    public ProductionOjectsController(ProductionObjectService productionObjectService, AdminDetailService adminDetailService, ProductionObjectMapper productionObjectMapper) {
-        this.productionObjectService = productionObjectService;
-        this.adminDetailService = adminDetailService;
-        this.productionObjectMapper = productionObjectMapper;
-    }
 
 
     @GetMapping("/all")

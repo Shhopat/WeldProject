@@ -4,18 +4,21 @@ import com.svar_proekt.weldproject.enums.Position;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import lombok.*;
 
 @Entity
 @Table(name = "worker")
+
+@Getter
+@Setter //пишем вместо Date
+@ToString
+
+@AllArgsConstructor
+@NoArgsConstructor
 public class Worker {
-
-    public Worker() {
-    }
-
     public Worker(int id, String name) {
         this.id = id;
         this.name = name;
-
     }
 
     @Id
@@ -35,35 +38,5 @@ public class Worker {
     @JoinColumn(name = "foreman_id", referencedColumnName = "id")
     private Foreman foreman;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public Foreman getForeman() {
-        return foreman;
-    }
-
-    public void setForeman(Foreman foreman) {
-        this.foreman = foreman;
-    }
 }

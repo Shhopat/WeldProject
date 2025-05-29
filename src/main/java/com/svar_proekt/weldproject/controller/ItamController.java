@@ -8,6 +8,7 @@ import com.svar_proekt.weldproject.mapper.ProductionObjectMapper;
 import com.svar_proekt.weldproject.model.Itam;
 import com.svar_proekt.weldproject.services.ItamService;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/itam")
+@RequiredArgsConstructor
 public class ItamController {
     private static final Logger logger = LoggerFactory.getLogger(ItamController.class);
     private int idObject;
@@ -28,12 +30,6 @@ public class ItamController {
     private final ProductionObjectService productionObjectService;
     private final ProductionObjectMapper productionObjectMapper;
 
-    public ItamController(ItamMapper itamMapper, ItamService itamService, ProductionObjectService productionObjectService, ProductionObjectMapper productionObjectMapper) {
-        this.itamMapper = itamMapper;
-        this.itamService = itamService;
-        this.productionObjectService = productionObjectService;
-        this.productionObjectMapper = productionObjectMapper;
-    }
 
 
     @GetMapping("/all/objectDTO/{id}")

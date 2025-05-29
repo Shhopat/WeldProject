@@ -3,17 +3,20 @@ package com.svar_proekt.weldproject.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 
 @Entity
 @Table(name = "foreman")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Foreman {
-
-    public Foreman() {
-    }
-
     public Foreman(int id, String name) {
         this.id = id;
         this.name = name;
@@ -41,43 +44,5 @@ public class Foreman {
     @OneToMany(mappedBy = "foreman", fetch = FetchType.EAGER)
     private List<Worker> workerList;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public ProductionObject getProductionObject() {
-        return productionObject;
-    }
-
-    public void setProductionObject(ProductionObject productionObject) {
-        this.productionObject = productionObject;
-    }
-
-    public List<Worker> getWorkerList() {
-        return workerList;
-    }
-
-    public void setWorkerList(List<Worker> workerList) {
-        this.workerList = workerList;
-    }
 }

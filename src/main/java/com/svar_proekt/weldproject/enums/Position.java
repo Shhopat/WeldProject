@@ -1,5 +1,10 @@
 package com.svar_proekt.weldproject.enums;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
 public enum Position {
     WELDER("Сварщик"),
     ELECTRICIAN("Электрик"),
@@ -8,11 +13,7 @@ public enum Position {
 
     private final String displayName;
 
-    Position(String displayName) {
-        this.displayName = displayName;
-    }
 
-    public String getDisplayName() {
-        return displayName;
-    }
+
+
 }

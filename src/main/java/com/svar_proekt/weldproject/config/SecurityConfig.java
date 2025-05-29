@@ -1,6 +1,7 @@
 package com.svar_proekt.weldproject.config;
 
 import com.svar_proekt.weldproject.client.ItamClient;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -16,12 +17,11 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+@Slf4j
 public class SecurityConfig {
-    private static final Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
-        logger.info("зашел в бин security");
+        log.info("зашел в бин security");
         security.formLogin(form -> form
                         .loginPage("/auth/login")
                         .loginProcessingUrl("/progressing")

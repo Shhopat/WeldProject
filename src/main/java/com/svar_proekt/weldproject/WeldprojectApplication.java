@@ -5,6 +5,8 @@ import com.svar_proekt.weldproject.dto.ItamDTO;
 import com.svar_proekt.weldproject.dto.ProductionObjectDTO;
 import com.svar_proekt.weldproject.mapper.ProductionObjectMapper;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +17,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
 
+@Slf4j
 @SpringBootApplication
+@RequiredArgsConstructor
 public class WeldprojectApplication implements CommandLineRunner {
-    private static final Logger logger = LoggerFactory.getLogger(WeldprojectApplication.class);
+
     private final ItamClient itamClient;
     private final ProductionObjectService productionObjectService;
     private final ProductionObjectMapper productionObjectMapper;
-
-    @Autowired
-    public WeldprojectApplication(ItamClient itamClient, ProductionObjectService productionObjectService, ProductionObjectMapper productionObjectMapper) {
-        this.itamClient = itamClient;
-        this.productionObjectService = productionObjectService;
-        this.productionObjectMapper = productionObjectMapper;
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(WeldprojectApplication.class, args);
@@ -35,22 +32,22 @@ public class WeldprojectApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("начало работы");
-        logger.info("создан объект production");
+        log.info("начало работы");
+        log.info("создан объект production");
         ProductionObjectDTO productionObjectDTO = new ProductionObjectDTO("Вати");
         productionObjectDTO.setId(10);
 
 
         try {
-            logger.debug("перед методом itamClient.getAllItam ");
+            log.debug("перед методом itamClient.getAllItam ");
             for (ItamDTO itamDTO : itamClient.getAllItam(productionObjectDTO)) {
                 System.out.println(itamDTO.getId() + ". " + itamDTO.getName());
             }
         } catch (RuntimeException e) {
-            logger.debug("поймал исключение");
+            log.debug("поймал исключение");
             System.out.println(e.getMessage());
         }
-        logger.info("конец работы");
+        log.info("конец работы");
 
     }
 }

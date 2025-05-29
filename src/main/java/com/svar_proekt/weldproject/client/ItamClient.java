@@ -4,6 +4,8 @@ import com.svar_proekt.weldproject.dto.ItamDTO;
 import com.svar_proekt.weldproject.dto.ProductionExceptionDTO;
 import com.svar_proekt.weldproject.dto.ProductionObjectDTO;
 import com.svar_proekt.weldproject.model.Itam;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +16,11 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @Component
+@Slf4j
+@AllArgsConstructor
 public class ItamClient {
-    private static final Logger logger = LoggerFactory.getLogger(ItamClient.class);
     private final WebClient webClient;
 
-    @Autowired
-    public ItamClient(WebClient webClient) {
-        this.webClient = webClient;
-    }
 
     public void addItam(ItamDTO itamDTO) {
         webClient.post().uri("/itam/save")
@@ -39,7 +38,7 @@ public class ItamClient {
     }
 
     public List<ItamDTO> getAllItam(ProductionObjectDTO productionObjectDTO) {
-       logger.info("перешел в метод getAllItam в WebClient ");
+        log.info("перешел в метод getAllItam в WebClient ");
 
         return webClient.get().uri(url -> url.path("/itam/getAll")
                         .queryParam("objectId", productionObjectDTO.getId())
@@ -52,7 +51,7 @@ public class ItamClient {
                         .flatMap(error -> Mono.error(new RuntimeException("Ошибка сервера: " + error))))
                 .bodyToFlux(ItamDTO.class)
                 .collectList()
-                .doOnSuccess(v -> System.out.println("all itam "  + productionObjectDTO.getName() + " got"))
+                .doOnSuccess(v -> System.out.println("all itam " + productionObjectDTO.getName() + " got"))
                 .block();
 
     }
