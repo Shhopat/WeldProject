@@ -29,7 +29,5 @@ public class OrderController {
                 productionObjectMapper.toDTO(productionObject));
         model.addAttribute("orders", orderMapper.toDTOList(productionObject.getOrdersList()));
         return "allOrders";
-
-
     }
 }

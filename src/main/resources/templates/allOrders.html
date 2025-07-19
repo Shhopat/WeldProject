@@ -6,6 +6,11 @@
 </head>
 <body>
 <h3 th:text="${object.id + '. ' + object.name + ' ' + object.address + ' ' + object.postcode }"></h3>
+<hr/>
+<p th:if="${orders.isEmpty()}">Нет ни одного заказа!</p>
+<div  th:unless="${orders.isEmpty()}" th:each="order : ${orders}">
+    <p th:text="${order.id ' '}"
 
+</div>
 </body>
 </html>
