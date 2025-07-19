@@ -6,6 +6,7 @@ import com.svar_proekt.weldproject.services.AdminDetailService;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +19,7 @@ import java.security.Principal;
 @RequestMapping("/object")
 @RequiredArgsConstructor
 public class ProductionOjectsController {
-    private final ProductionObjectService productionObjectService;
+    private final @Lazy ProductionObjectService productionObjectService;
     private final AdminDetailService adminDetailService;
     private final ProductionObjectMapper productionObjectMapper;
 

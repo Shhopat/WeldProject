@@ -14,9 +14,11 @@ import java.util.List;
 public interface ItamMapper {
 
     @Mapping(source = "productionObject", target = "productionObjectDTO")
+    @Mapping(source = "order.id", target = "orderId")
     public ItamDTO toDTO(Itam itam);
 
     @Mapping(source = "productionObjectDTO", target = "productionObject")
+    @Mapping(source = "orderId", target = "order.id")
     public Itam toEntity(ItamDTO itamDTO);
 
     public List<Itam> toEntityList(List<ItamDTO> itamDTOList);

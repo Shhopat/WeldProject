@@ -16,6 +16,8 @@ public class ItamDTO {
 
     private ProductionObjectDTO productionObjectDTO;
 
+    private Integer orderId;
+
 
 }
 

@@ -6,7 +6,9 @@
 </head>
 <body>
 <h3 th:text="${objectDTO.id + '. ' + objectDTO.name + ' ' + objectDTO.address + ' ' + objectDTO.postcode }"></h3>
-<a th:href="@{/itam/all/objectDTO/{id}(id = ${objectDTO.id})}">Список заказов</a>
+<a th:href="@{/itam/all/objectDTO/{id}(id = ${objectDTO.id})}">Список материалов</a>
+<br/>
+<a th:href="@{/order/objectDTO/{id}(id=${objectDTO.id})}">Список заказов</a>
 <hr/>
 <h5>Список бригадиров:</h5>
 <p th:if="${foremanDTOList.isEmpty()}">Нет ни одного бригадира!</p>

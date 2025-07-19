@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>itam_edit</title>
+</head>
+<body>
+<h3>Редактирование материала:</h3>
+<form method="post" th:action="@{/itam/update}" th:object="${itamDTO}">
+    <input type="hidden" th:field="*{id}" id="id">
+    <input type="hidden" th:field="*{productionObjectDTO.id}">
+    <label for="name">Введите имя:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <hr/>
+    <input type="submit" value="Изменить!">
+
+</form>
+
+</body>
+</html>

@@ -3,12 +3,14 @@ package com.svar_proekt.weldproject.services;
 import com.svar_proekt.weldproject.model.Admin;
 import com.svar_proekt.weldproject.repositories.AdminRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class RegistrationService {
     private final AdminRepository adminRepository;
     private final PasswordEncoder passwordEncoder;
@@ -19,6 +21,7 @@ public class RegistrationService {
     public void register(Admin admin) {
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         adminRepository.save(admin);
+        log.debug("регистрация прошла");
     }
 
     @Transactional

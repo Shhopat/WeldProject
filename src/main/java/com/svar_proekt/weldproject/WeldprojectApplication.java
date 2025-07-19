@@ -19,35 +19,11 @@ import java.util.Arrays;
 
 @Slf4j
 @SpringBootApplication
-@RequiredArgsConstructor
-public class WeldprojectApplication implements CommandLineRunner {
-
-    private final ItamClient itamClient;
-    private final ProductionObjectService productionObjectService;
-    private final ProductionObjectMapper productionObjectMapper;
-
+public class WeldprojectApplication {
     public static void main(String[] args) {
         SpringApplication.run(WeldprojectApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        log.info("начало работы");
-        log.info("создан объект production");
-        ProductionObjectDTO productionObjectDTO = new ProductionObjectDTO("Вати");
-        productionObjectDTO.setId(10);
-
-
-        try {
-            log.debug("перед методом itamClient.getAllItam ");
-            for (ItamDTO itamDTO : itamClient.getAllItam(productionObjectDTO)) {
-                System.out.println(itamDTO.getId() + ". " + itamDTO.getName());
-            }
-        } catch (RuntimeException e) {
-            log.debug("поймал исключение");
-            System.out.println(e.getMessage());
-        }
-        log.info("конец работы");
 
     }
-}
+

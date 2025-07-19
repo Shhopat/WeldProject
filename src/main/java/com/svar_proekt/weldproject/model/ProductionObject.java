@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -48,8 +49,11 @@ public class ProductionObject {
     @OneToMany(mappedBy = "productionObject", fetch = FetchType.EAGER)
     private List<Foreman> foremanList;
 
-    @OneToMany(mappedBy = "productionObject",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "productionObject", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Itam> itamList;
+
+    @OneToMany(mappedBy = "productionObject", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Order> ordersList;
 
 
 }

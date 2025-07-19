@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    image: shhopat/my_repository:test1.0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/spring_app?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1297
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1297
+      MYSQL_DATABASE: spring_app
+    volumes:
+      - mytom:/var/lib/mysql
+      - ./db_init/spring_app_utf8.sql:/docker-entrypoint-initdb.d/spring_app.sql  # Подключаем исправленный дамп с нужным именем
+
+volumes:
+  mytom:

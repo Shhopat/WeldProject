@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +22,7 @@ import java.security.Principal;
 @Controller
 @RequestMapping("/auth")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
     private final AdminMapper adminMapper;
     private final RegistrationService registrationService;
@@ -50,7 +52,7 @@ public class AuthController {
                        BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             for (FieldError fieldError : bindingResult.getFieldErrors()) {
-                System.out.println(fieldError.getField() + " - " + fieldError.getDefaultMessage());
+                log.debug("{} {}", fieldError.getField(), fieldError.getDefaultMessage());
             }
             model.addAttribute("roles", Role.values());
             return "registration";

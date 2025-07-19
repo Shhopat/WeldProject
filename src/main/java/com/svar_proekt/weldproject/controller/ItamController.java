@@ -9,6 +9,7 @@ import com.svar_proekt.weldproject.model.Itam;
 import com.svar_proekt.weldproject.services.ItamService;
 import com.svar_proekt.weldproject.services.ProductionObjectService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -22,24 +23,21 @@ import java.util.List;
 @Controller
 @RequestMapping("/itam")
 @RequiredArgsConstructor
+@Slf4j
 public class ItamController {
     private static final Logger logger = LoggerFactory.getLogger(ItamController.class);
-    private int idObject;
+
     private final ItamMapper itamMapper;
     private final ItamService itamService;
     private final ProductionObjectService productionObjectService;
     private final ProductionObjectMapper productionObjectMapper;
 
 
-
     @GetMapping("/all/objectDTO/{id}")
     public String getAllItam(@PathVariable("id") int id, Model model) {
-        this.idObject = id;
-        System.out.println(productionObjectService.findById(idObject).getItamList().get(0).getName());
-        ProductionObjectDTO productionObjectDTO = productionObjectMapper.toDTO(productionObjectService.findById(idObject));
+        ProductionObjectDTO productionObjectDTO = productionObjectMapper.toDTO(productionObjectService.findById(id));
         model.addAttribute("objectDTO", productionObjectDTO);
         model.addAttribute("itamDTOList", productionObjectDTO.getItamDTOList());
-        System.out.println(productionObjectDTO.getItamDTOList());
 
         return "AllItam";
 
@@ -60,8 +58,24 @@ public class ItamController {
     public ResponseEntity<List<ItamDTO>> listResponseEntity(@RequestParam("objectId") int idObject) {
         logger.info(" перешел в ItamController");
 
-       return new ResponseEntity<>(itamMapper.itamDTOList(itamService.findAll(idObject)),HttpStatus.OK);
-
+        return new ResponseEntity<>(itamMapper.itamDTOList(itamService.findAll(idObject)), HttpStatus.OK);
 
     }
+
+    @GetMapping("/objectDTO/{id}/getForm")
+    public String getFormItam(@PathVariable("id") int idObject, Model model) {
+        model.addAttribute("itam", new ItamDTO());
+        model.addAttribute("object", productionObjectMapper.toDTO(productionObjectService.findById(idObject)));
+        return "formItam";
+    }
+
+    @PostMapping("/object/{id}/save")
+    public String saveItam(@PathVariable("id") int idObject, @ModelAttribute("itam") Itam itam) {
+        log.debug(itam.getName());
+        productionObjectService.addItam(idObject, itam);
+        log.debug("вышел  из addItam");
+        return "redirect:/itam/all/objectDTO/" + idObject;
+
+    }
+
 }

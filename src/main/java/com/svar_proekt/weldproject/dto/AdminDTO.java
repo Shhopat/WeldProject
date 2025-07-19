@@ -20,6 +20,7 @@ public class AdminDTO {
     @Size(message = "username should be between 5 - 40", min = 5, max = 20)
     @NotEmpty(message = "username not be empty")
     private String username;
+
     @Size(message = "password should be between 8 - 100", min = 8, max = 100)
     @NotEmpty(message = "password not be empty")
     private String password;

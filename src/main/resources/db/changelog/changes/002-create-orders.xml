@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+    <changeSet id="004-create-orders" author="dev">
+        <createTable tableName="orders">
+            <column name="order_id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="bigint"/>
+            <column name="product" type="varchar(100)"/>
+            <column name="amount" type="decimal"/>
+        </createTable>
+        <insert tableName="orders">
+            <column name="order_id" value="1"/>
+            <column name="user_id" value="1"/>
+            <column name="product" value="Laptop"/>
+            <column name="amount" value="999.99"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_id" value="2"/>
+            <column name="user_id" value="2"/>
+            <column name="product" value="Phone"/>
+            <column name="amount" value="499.99"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -42,5 +42,7 @@ public class ProductionObjectDTO {
 
     private List<ItamDTO> itamDTOList;
 
+    private List<OrderDTO> ordersDTOList;
+
 
 }

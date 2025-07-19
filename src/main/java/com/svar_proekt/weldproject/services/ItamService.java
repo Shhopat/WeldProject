@@ -8,8 +8,10 @@ import com.svar_proekt.weldproject.util.ProductionObjectNotFoundException;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.internal.util.stereotypes.Lazy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,12 +20,15 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 @Slf4j
-@RequiredArgsConstructor
 public class ItamService {
-
     public final ItamRepository itamRepository;
     private final ProductionObjectService productionObjectService;
 
+    @Autowired
+    public ItamService(ItamRepository itamRepository, ProductionObjectService productionObjectService) {
+        this.itamRepository = itamRepository;
+        this.productionObjectService = productionObjectService;
+    }
 
     @Transactional
     public void save(Itam itam) {

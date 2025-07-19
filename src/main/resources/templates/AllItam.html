@@ -12,5 +12,10 @@
 <div th:unless="${itamDTOList.isEmpty()}" th:each="x : ${itamDTOList}">
     <p th:text="${x.id + '. ' + x.name}"></p>
 </div>
+<br/>
+<hr/>
+<form method="GET" th:action="@{/itam/objectDTO/{id}/getForm(id = ${objectDTO.id})}">
+    <input type="submit" value="Добавить материалы">
+</form>
 </body>
 </html>

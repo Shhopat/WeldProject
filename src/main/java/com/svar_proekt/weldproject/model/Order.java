@@ -3,29 +3,24 @@ package com.svar_proekt.weldproject.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "itam")
+@Table(name = "orders")
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
-public class Itam {
-
+@EqualsAndHashCode
+@AllArgsConstructor
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(name = "name", length = 100, nullable = false, unique = true)
-    private String name;
+    private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "object_id", referencedColumnName = "id")
     private ProductionObject productionObject;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
-    private Order order;
-
-
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    private List<Itam> itamList;
 }

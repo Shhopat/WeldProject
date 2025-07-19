@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>form_itam</title>
+</head>
+<body>
+<form method="post" th:action="@{/weld/foreman/save}" th:object="${joint}">
+    <label for="foreman">Выберите бригадира:</label>
+    <select th:field="*{foreman}" id="foreman">
+        <option th:each="foreman : ${foremanList}"
+                th:text="${foreman.name}" th:value="${foreman}"></option>
+    </select>
+    <br/>
+    <label for="name">Введите имя стыка:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <br/>
+    <label for="count">Введите количество стыков: </label>
+    <input type="number" th:field="*{count}" id="count">
+    <br/>
+    <label for="thickeness">Введите толщину металла:</label>
+    <input type="number" th:field="*{thickeness}" id="thickeness">
+    <br/>
+    <label for="length">Введите длину стыка:</label>
+    <input type="text" th:field="*{length}" id="length">
+    <br/>
+    <hr/>
+    <input type="submit" value="Добавить!">
+    </form>
+
+</body>
+</html>
