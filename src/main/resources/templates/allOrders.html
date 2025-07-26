@@ -9,8 +9,11 @@
 <hr/>
 <p th:if="${orders.isEmpty()}">Нет ни одного заказа!</p>
 <div  th:unless="${orders.isEmpty()}" th:each="order : ${orders}">
-    <p th:text="${order.id ' '}"
 
 </div>
+<hr/>
+<form method="get" th:action="@{/order/object/{id}/getFormOrder(id = ${object.id})}">
+    <input type="submit" value="Сделать заказ">
+</form>
 </body>
 </html>

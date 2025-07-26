@@ -2,6 +2,10 @@ package com.svar_proekt.weldproject.config;
 
 import com.svar_proekt.weldproject.client.ItamClient;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.admin.NewTopic;
+import org.redisson.Redisson;
+import org.redisson.api.RedissonClient;
+import org.redisson.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +32,7 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/auth/hello", true)
                         .failureUrl("/auth/login?error"))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login", "/auth/registration","/auth/save")
+                        .requestMatchers("/auth/login", "/auth/registration", "/auth/save")
                         .permitAll()
                         .anyRequest().hasAnyRole("USER", "ADMIN"))
                 .logout(logout -> logout
@@ -48,6 +52,21 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+
+    @Bean(destroyMethod = "shutdown")
+    public RedissonClient redissonClient() {
+        Config config = new Config();
+        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
+        return Redisson.create(config);
+    }
+    @Bean
+    public NewTopic myTopic() {
+        return new NewTopic("my-topic", 3, (short) 1);
+        // "my-topic" — имя топика
+        // 3 — число партаций
+        // 1 — репликации
     }
 
 }
